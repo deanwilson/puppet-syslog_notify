@@ -1,0 +1,21 @@
+Puppet SyslogNotify Type
+
+Send arbitrary notify messages to a remote syslog server without writing to the local logs.
+
+Usage:
+
+  Sends an arbitrary message to a remote syslog server
+
+     syslog_notify { "Job ran on $fqdn":
+       server => "loghost.example.com"
+     }
+
+     syslog_notify { "Job ran on $fqdn":
+       server => "loghost.example.com",
+       port   => 1024, # defaults to 514
+     }
+
+     Requires the remote_syslog_logger gem from gem or
+     https://github.com/papertrail/remote_syslog_logger
+
+Copyright - Dean Wilson dean.wilson@gmail.com
